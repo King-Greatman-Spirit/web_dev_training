@@ -1,0 +1,125 @@
+/* Apply the following styles to all elements, and their ::before and ::after pseudo-elements */
+*, *::before, *::after {
+	/* Make sure that padding and borders are included within the element's total width and height */
+	box-sizing: border-box;
+	/* Set the font for all elements to Gotham Rounded or fall back to sans-serif if unavailable */
+	font-family: Gotham Rounded, sans-serif;
+	/* Set font weight to normal for all elements */
+	font-weight: normal;
+}
+
+/* Apply these styles to the body element */
+body {
+	/* Remove default padding and margin for the body to make it edge-to-edge */
+	padding: 0;
+	margin: 0;
+	/* Set a background gradient that goes from blue at the top to green at the bottom */
+	background: linear-gradient(to right, #00AAFF, #00FF6C);
+}
+
+/* Style the h1 element (typically the page title) */
+h1 {
+	/* Set a semi-transparent white background color */
+	background-color: rgba(255, 255, 255, 0.80);
+	/* Center the h1 content horizontally using flexbox */
+	justify-content: center;
+	/* Make the h1 take up the full width of the page */
+	width: 100%;
+	/* Use flexbox to align and display the content inside the h1 */
+	display: flex;
+	/* Add padding to the left and right of the h1 */
+	padding: 0 30px;
+	/* Make the font size responsive: 20px base + 2% of the viewport width */
+	font-size: calc(20px + 2vw);
+	/* Set the height of the line within the h1 to 60px */
+	line-height: 60px;
+	/* Fix the h1 to the top of the page so it stays in place while scrolling */
+/*	top: 0;*/
+	/* Make the h1 fixed on the page */
+	position: fixed;
+	/* Make all the letters in h1 uppercase */
+	text-transform: uppercase;
+	z-index: 1000;
+}
+
+/* Style for the calculator grid container */
+.calculator-grid {
+	/* Use grid layout for the calculator */
+	display: grid;
+	/* Center the calculator horizontally */
+	justify-content: center;
+	/* Align the grid contents vertically in the center of the page */
+	align-content: center;
+	/* Make the grid fill the entire height of the viewport */
+	min-height: 100vh;
+	/* Create 4 equal-width columns, each 100px wide */
+	grid-template-columns: repeat(4, 100px);
+	/* Create 6 rows: first one is at least 120px tall, others are 70px tall */
+	grid-template-rows: minmax(120px, auto) repeat(5, 70px);
+	/* Add some margin above the calculator grid */
+	margin-top: 20px;
+}
+
+/* Style the buttons within the calculator grid */
+.calculator-grid > button {
+	/* Show a pointer cursor when hovering over the buttons */
+	cursor: pointer;
+	/* Set the font size of the button text to 2rem (2x the default font size) */
+	font-size: 2rem;
+	/* Add a white border around the buttons */
+	border: 1px solid white;
+	/* Remove the outline from buttons when focused (prevents blue focus ring) */
+	outline: none;
+	/* Set a semi-transparent white background for the buttons */
+	background-color: rgba(255, 255, 255, 0.80);
+}
+
+/* Add hover effect for buttons */
+.calculator-grid > button:hover {
+	/* Increase the opacity of the button's background when hovered */
+	background-color: rgba(255, 255, 255, 0.90);
+}
+
+/* Class for buttons that should span two columns */
+.span-two {
+	/* Make the button take up the space of two columns */
+	grid-column: span 2;
+}
+
+/* Style the output display area of the calculator */
+.output {
+	/* Make the output stretch across all 4 columns */
+	grid-column: 1 / -1;
+	/* Set a semi-transparent black background for the output area */
+	background-color: rgba(0, 0, 0, 0.75);
+	/* Use flexbox to align content within the output */
+	display: flex;
+	/* Align items to the bottom of the container (like aligning numbers to the bottom) */
+	align-items: flex-end;
+	/* Distribute space evenly between the child elements (previous and current operand) */
+	justify-content: space-around;
+	/* Make the flexbox content flow in a vertical column */
+	flex-direction: column;
+	/* Add padding inside the output area */
+	padding: 10px;
+	/* Allow the output text to break into the next line if it gets too long */
+	word-wrap: break-word;
+	/* Ensure that long words are broken if needed */
+	word-break: break-all;
+}
+
+/* Style for the previous operand text inside the output */
+.output .previous-operand {
+	/* Set the color of the previous operand to a semi-transparent white */
+	color: rgba(255, 255, 255, 0.75);
+	/* Set the font size to 1.5 rem (1.5x the default font size) */
+	font-size: 1.5rem;
+}
+
+/* Style for the current operand text inside the output */
+.output .current-operand {
+	/* Set the color of the current operand to solid white */
+	color: white;
+	/* Set the font size to 2.5 rem (2.5x the default font size) */
+	font-size: 2.5rem;
+}

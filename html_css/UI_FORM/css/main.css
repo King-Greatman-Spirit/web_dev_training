@@ -1,0 +1,108 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(../image/background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100% 100%;
+  font-family: verdana, Geneva, Tahoma, sans-serif;
+  margin: 0;
+}
+
+nav {
+  background-color: #0082e6;
+  line-height: 100px;
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  top: 0;
+  position: fixed;
+  z-index: 1000;
+}
+
+label.header {
+  color: white;
+  font-size: calc(20px + 2vw);
+  padding: 0 30px;
+  font-weight: bolder;
+}
+
+.header span {
+  display: inline-block;
+}
+
+.header span:first-child {
+  color: lightgreen;
+}
+
+.header span:last-child {
+  color: skyblue;
+}
+
+section {
+  margin: 25px;
+  margin-top: 130px;
+}
+
+.container {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 20px 10px rgba(0, 0, 0, 0.3);
+  width: 500px;
+  margin: 0 auto;
+}
+
+.form {
+  padding: 20px 40px;
+}
+
+.form-control {
+  margin-top: 10px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.form-control label {
+  color: #777;
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bolder;
+}
+
+.form-control input,
+.form-control select {
+  border: 2px solid #f0f0f0;
+  border-radius: 4px;
+  display: block;
+  padding: 10px;
+  font-size: 14px;
+  width: 100%;
+  font-weight: bolder;
+}
+
+.form-control input:focus {
+  outline: 0;
+  border-color: #777;
+}
+
+.form button {
+  cursor: pointer;
+  background-color: #3498db;
+  border: 2px solid#3498db;
+  color: #fff;
+  display: block;
+  font-size: 16px;
+  line-height: 40px;
+  width: 100%;
+}
+
+.form h1 {
+  margin: 0 0 20px;
+  text-align: center;
+}
